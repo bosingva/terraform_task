@@ -1,15 +1,14 @@
 variable "vpc_cidr" {
-    type = string
-}
-
-variable "env" {
-    type = string  
+  description = "The CIDR block of the VPC"
+  type        = string
 }
 
 variable "public_subnet_cidrs" {
-    type = list  
+  description = "The CIDR blocks of the public subnets"
+  type        = list(any)
 }
 
 variable "private_subnet_cidrs" {
-    type = list
+  description = "The CIDR blocks of the private subnets"
+  type        = list(any)
 }
