@@ -5,10 +5,10 @@ variable "vpc_cidr" {
 
 variable "public_subnet_cidrs" {
   description = "The CIDR blocks of the public subnets"
-  type        = list(any)
+  type        = list
 }
 
 variable "private_subnet_cidrs" {
   description = "The CIDR blocks of the private subnets"
-  type        = list(any)
+  type        = list
 }

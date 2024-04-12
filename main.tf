@@ -33,3 +33,39 @@ module "sg" {
   ingress_rules = var.ingress_rules
   egress_rules  = var.egress_rules
 }
+
+module "new_ec2" {
+  source                      = "./modules/ec2"
+  for_each                    = var.instances
+  ami_id                      = each.value["ami"]
+  instance_type               = each.value["instance_type"]
+  subnet_id                   = module.vpc.public_subnet_ids[0]
+  associate_public_ip_address = var.associate_public_ip_address
+  security_groups             = [module.sg.sg_id]
+}
+data "aws_ami" "ubuntu" {
+  most_recent = true
+
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+
+  owners = ["099720109477"]
+}
+
+
+data "aws_ami" "latest_amazon_linux" {
+  owners      = ["amazon"]
+  most_recent = true
+  filter {
+    name   = "name"
+    values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+  }
+}
+
