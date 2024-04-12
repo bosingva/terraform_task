@@ -80,12 +80,10 @@ variable "instances" {
     "instance1" = {
       instance_type = "t2.micro"
       ami           = "ami-026c3177c9bd54288"
-      subnet_id     = "module.vpc.public_subnet_ids[0]"
     }
     "instance2" = {
       instance_type = "t2.medium"
       ami           = "ami-026c3177c9bd54288"
-      subnet_id     = "module.vpc.public_subnet_ids[1]"
     }
   }
 }
