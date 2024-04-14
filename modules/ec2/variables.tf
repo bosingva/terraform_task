@@ -22,14 +22,5 @@ variable "security_groups" {
   type        = list(any)
 }
 
-# variable key_name {
-#     description = "Name of the EC2 key pair for SSH access"
-#     type =string
-#     default = "aws_key_pair.deployer.key_name"
-# }
 
-# variable public_key_location{
-#     description = "Location of the public"
-#     default = "/home/dikson/.ssh/id_rsa.pub"
-# }
 

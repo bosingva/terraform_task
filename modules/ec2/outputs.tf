@@ -16,4 +16,3 @@ output "instance_public_ips" {
 
 
 
-
