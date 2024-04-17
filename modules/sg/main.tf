@@ -1,15 +1,18 @@
-
-
 resource "aws_security_group" "new_sg" {
-  name        = var.name
+  name = var.name_of_sg
   description = var.description
   vpc_id      = var.vpc_id
 
-  tags = {
-    Name = "SG"
-  }
+  tags = merge(
+    var.default_tags,
+    {
+      Name = var.name_of_sg
+    }
+  )
 
 }
+
+
 
 
 resource "aws_security_group_rule" "ingress" {
@@ -34,4 +37,28 @@ resource "aws_security_group_rule" "egress" {
   to_port     = var.egress_rules[count.index].to_port
   protocol    = var.egress_rules[count.index].protocol
   cidr_blocks = var.egress_rules[count.index].cidr_blocks
+}
+
+variable "default_tags" {
+  description = "Default Tags for Auto Scaling Group"
+  type        = map(string)
+  default     = {
+    Environment = "Test"
+    Owner       = "VERTEX"
+    Project     = "Workload in Europe"
+  }
+}
+
+variable "name_of_sg" {
+  description = "Name of the instance"
+  type        = string
+  default = "Reusable"
+}
+
+
+
+variable "description" {
+  type        = string
+  description = "Description of the security group"
+  default = "With SSH and HTTP port opened"
 }

@@ -2,16 +2,24 @@ data "aws_availability_zones" "available" {}
 
 resource "aws_vpc" "main" {
   cidr_block = var.vpc_cidr
-  tags = {
-    Name = "Vpc"
-  }
+
+  tags = merge(
+    var.default_tags,
+    {
+      Name = var.name_of_vpc // Example specific tag, replace with actual instance name as required
+    }
+  )
 }
 
 resource "aws_internet_gateway" "main" {
   vpc_id = aws_vpc.main.id
-  tags = {
-    Name = "Igw"
-  }
+
+  tags = merge(
+    var.default_tags,
+    {
+      Name = var.name_of_ig // Example specific tag, replace with actual instance name as required
+    }
+  )
 }
 
 #-------------Public Subnets and Routing----------------------------------------

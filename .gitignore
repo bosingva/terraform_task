@@ -1,2 +1,30 @@
 *.terraform*
-terraform*
+# terraform*
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+
+# Exclude all .tfvars files, which might contain sensitive data, such as
+# password, private keys, and other secrets. Alternatively, you can
+# include specific .tfvars files you wish to track using !filename.tfvars
+# *.tfvars
+
+# Ignore override files as they are usually used to override resources locally and should
+# not be shared with others
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+# Ignore any .terraform.lock.hcl files that may be generated
+.terraform.lock.hcl
