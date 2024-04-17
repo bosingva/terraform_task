@@ -7,5 +7,5 @@ resource "aws_instance" "test" {
 
   # tags = var.tags
   tags = merge({ "Name" = var.name_of_instance }, var.tags)
-    
+
 }

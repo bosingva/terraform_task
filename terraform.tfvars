@@ -42,47 +42,29 @@ egress_rules = [
 
 associate_public_ip_address = true
 
-# instances = [
-#   "instance1" = {
-#     instance_type = "t2.micro"
-#     ami           = "ami-026c3177c9bd54288"
-#   }
-#   "instance2" = {
-#     instance_type = "t2.medium"
-#     ami           = "ami-07ff8415655af0553"
-#   }
-#   "instance3" = {
-#     instance_type = "t2.micro"
-#     ami           = "ami-07ff8415655af0553"
-#     tags = {
-#       instance = "3"
-#     }
-#   }
-# ]
-
 
 
 instances = {
-    "instance1" = {
-      instance      = "instance1"
-      instance_type = "t2.micro"
-      ami           = "ami-026c3177c9bd54288"
-    },
-    "instance2" = {
-      instance      = "instance2"  
-      instance_type = "t2.micro"
-      ami           = "ami-07ff8415655af0553"
-    },
-    "instance2" = {
-      instance      = "instance3"
-      instance_type = "t2.micro"
-      ami           = "ami-07ff8415655af0553"
-    }
+  "instance1" = {
+    instance      = "instance1"
+    instance_type = "t2.micro"
+    ami           = "ami-026c3177c9bd54288"
+  },
+  "instance2" = {
+    instance      = "instance2"
+    instance_type = "t2.micro"
+    ami           = "ami-07ff8415655af0553"
+  },
+  "instance3" = {
+    instance      = "instance3"
+    instance_type = "t2.micro"
+    ami           = "ami-07ff8415655af0553"
   }
+}
 
-  tags = {
-    Environment = "Test"
-    Owner       = "VERTEX"
-    Project     = "Workload in Europe"
-  }
+tags = {
+  Environment = "Test"
+  Owner       = "VERTEX"
+  Project     = "Workload in Europe"
+}
 
