@@ -1,5 +1,5 @@
 variable "tags" {
-  description = "Default Tags for Auto Scaling Group"
+  description = "Default Tags for SG"
   type        = map(string)
   default     = {}
 }

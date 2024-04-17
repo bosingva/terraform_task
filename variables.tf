@@ -30,10 +30,6 @@ variable "private_subnet_cidrs" {
   ]
 }
 
-variable "name" {
-  description = "Name of the security group"
-}
-
 variable "description" {
   description = "Description of the security group"
 }
@@ -55,3 +51,11 @@ variable "associate_public_ip_address" {
 variable "instances" {
   type = map(any)
 }
+
+variable "tags" {
+  description = "Default Tags for SG"
+  type        = map(string)
+}
+
+
+

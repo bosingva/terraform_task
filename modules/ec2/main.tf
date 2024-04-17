@@ -5,7 +5,7 @@ resource "aws_instance" "test" {
   associate_public_ip_address = var.associate_public_ip_address
   vpc_security_group_ids      = var.vpc_security_group_ids
 
-  tags = {
-     var.tags    
-  }    
+  # tags = var.tags
+  tags = merge({ "Name" = var.name_of_instance }, var.tags)
+    
 }

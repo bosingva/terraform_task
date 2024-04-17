@@ -61,12 +61,12 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_ami"></a> [ami](#input\_ami) | ID of AMI for the instance | `string` | `""` | no |
-| <a name="input_associate_public_ip_address"></a> [associate\_public\_ip\_address](#input\_associate\_public\_ip\_address) | Whether to associate a public IP address with the instance | `bool` | `true` | no |
-| <a name="input_default_tags"></a> [default\_tags](#input\_default\_tags) | Default Tags for Auto Scaling Group | `map(string)` | <pre>{<br>  "Environment": "Test",<br>  "Owner": "VERTEX",<br>  "Project": "Workload in Europe"<br>}</pre> | no |
-| <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | Instance type (e.g., t2.micro, m5.large) | `string` | `""` | no |
-| <a name="input_name_of_instance"></a> [name\_of\_instance](#input\_name\_of\_instance) | Name of the instance | `string` | `"My_instance"` | no |
-| <a name="input_subnet_id"></a> [subnet\_id](#input\_subnet\_id) | Subnet ID in which instance should be created | `string` | `""` | no |
+| <a name="input_ami"></a> [ami](#input\_ami) | ID of AMI for the instance | `string` | n/a | yes |
+| <a name="input_associate_public_ip_address"></a> [associate\_public\_ip\_address](#input\_associate\_public\_ip\_address) | Whether to associate a public IP address with the instance | `bool` | n/a | yes |
+| <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | Instance type (e.g., t2.micro, m5.large) | `string` | n/a | yes |
+| <a name="input_name_of_instance"></a> [name\_of\_instance](#input\_name\_of\_instance) | Name of the instance | `string` | n/a | yes |
+| <a name="input_subnet_id"></a> [subnet\_id](#input\_subnet\_id) | Subnet ID in which instance should be created | `string` | n/a | yes |
+| <a name="input_tags"></a> [tags](#input\_tags) | Default Tags for EC2 | `map(string)` | `{}` | no |
 | <a name="input_vpc_security_group_ids"></a> [vpc\_security\_group\_ids](#input\_vpc\_security\_group\_ids) | List of security group IDs to associate with the instance | `list(any)` | n/a | yes |
 
 ## Outputs

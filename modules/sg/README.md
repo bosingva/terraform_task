@@ -25,11 +25,11 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_default_tags"></a> [default\_tags](#input\_default\_tags) | Default Tags for Auto Scaling Group | `map(string)` | <pre>{<br>  "Environment": "Test",<br>  "Owner": "VERTEX",<br>  "Project": "Workload in Europe"<br>}</pre> | no |
-| <a name="input_description"></a> [description](#input\_description) | Description of the security group | `string` | `"With SSH and HTTP port opened"` | no |
+| <a name="input_description"></a> [description](#input\_description) | Description of the security group | `string` | n/a | yes |
 | <a name="input_egress_rules"></a> [egress\_rules](#input\_egress\_rules) | List of egress rules for the security group | `list(any)` | `[]` | no |
 | <a name="input_ingress_rules"></a> [ingress\_rules](#input\_ingress\_rules) | List of ingress rules for the security group | `list(any)` | `[]` | no |
-| <a name="input_name_of_sg"></a> [name\_of\_sg](#input\_name\_of\_sg) | Name of the instance | `string` | `"Reusable"` | no |
+| <a name="input_name_of_sg"></a> [name\_of\_sg](#input\_name\_of\_sg) | Name of the instance | `string` | n/a | yes |
+| <a name="input_tags"></a> [tags](#input\_tags) | Default Tags for SG | `map(string)` | `{}` | no |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | ID of the VPC to associate the security group with | `string` | n/a | yes |
 
 ## Outputs
