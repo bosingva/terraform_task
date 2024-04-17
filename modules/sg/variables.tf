@@ -1,21 +1,18 @@
-# variable "default_tags" {
-#   description = "Default Tags for Auto Scaling Group"
-#   type        = map(string)
-#   default     = {}
-# }
+variable "tags" {
+  description = "Default Tags for Auto Scaling Group"
+  type        = map(string)
+  default     = {}
+}
 
-# variable "name_of_sg" {
-#   description = "Name of the instance"
-#   type        = string
-#   default = ""
-# }
+variable "name_of_sg" {
+  description = "Name of the instance"
+  type        = string
+}
 
-# variable "description" {
-#   type        = string
-#   description = "Description of the security group"
-#   default = ""
-  
-# }
+variable "description" {
+  type        = string
+  description = "Description of the security group"  
+}
 
 variable "vpc_id" {
   type        = string

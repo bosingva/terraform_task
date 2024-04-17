@@ -5,7 +5,7 @@
 # }
 
 # name_of_sg = "Reusable"
-# description = "For testing"
+description = "For testing"
 ingress_rules = [
   {
     from_port   = 22,

@@ -13,17 +13,17 @@ provider "aws" {
 
 module "vpc" {
   source               = "./modules/vpc"
-  # vpc_cidr             = var.vpc_cidr
-  # public_subnet_cidrs  = var.public_subnet_cidrs
-  # private_subnet_cidrs = var.private_subnet_cidrs
+  vpc_cidr             = var.vpc_cidr
+  public_subnet_cidrs  = var.public_subnet_cidrs
+  private_subnet_cidrs = var.private_subnet_cidrs
 }
 
 module "sg" {
   source        = "./modules/sg"
   vpc_id        = module.vpc.vpc_id
-  # description   = var.description
-  # ingress_rules = var.ingress_rules
-  # egress_rules  = var.egress_rules
+  description   = var.description
+  ingress_rules = var.ingress_rules
+  egress_rules  = var.egress_rules
 }
 
 module "new_ec2" {
