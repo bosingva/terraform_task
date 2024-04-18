@@ -9,6 +9,13 @@ terraform {
 
 provider "aws" {
   region = var.region
+   default_tags {
+   tags = {
+     Environment = "Test"
+     Owner       = "TFProviders"
+     Project     = "Test"
+   }
+ }
 }
 
 module "vpc" {
@@ -18,7 +25,7 @@ module "vpc" {
   vpc_cidr             = var.vpc_cidr
   public_subnet_cidrs  = var.public_subnet_cidrs
   private_subnet_cidrs = var.private_subnet_cidrs
-  tags                 = var.tags
+  # tags                 = var.tags
 }
 
 module "sg" {
@@ -28,7 +35,7 @@ module "sg" {
   description   = var.description
   ingress_rules = var.ingress_rules
   egress_rules  = var.egress_rules
-  tags          = var.tags
+  # tags          = var.tags
 }
 
 module "new_ec2" {
@@ -41,5 +48,5 @@ module "new_ec2" {
   subnet_id                   = module.vpc.public_subnet_ids[0]
   associate_public_ip_address = false
   vpc_security_group_ids      = [module.sg.sg_id]
-  tags                        = var.tags
+  # tags                        = var.tags
 }
